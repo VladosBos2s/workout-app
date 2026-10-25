@@ -1,13 +1,22 @@
 const { Pool } = require('pg');
-require('dotenv').config(); 
+require('dotenv').config();
 
+// Парсим параметры из DATABASE_URL или берем по отдельности
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
-    rejectUnauthorized: false // Обязательно для Supabase в облаке
+    rejectUnauthorized: false
   },
-  family: 4 // Принудительно IPv4 для обхода ENETUNREACH на Render
+  family: 4 // Принудительно заставляем использовать IPv4
 });
 
-console.log('База данных postgreSQL успешно запущена!');
+// Дополнительная проверка, чтобы убедиться, что пул живой
+pool.on('connect', () => {
+  console.log('Успешное подключение к PostgreSQL через IPv4');
+});
+
+pool.on('error', (err) => {
+  console.error('Ошибка в пуле PostgreSQL:', err);
+});
+
 module.exports = pool;

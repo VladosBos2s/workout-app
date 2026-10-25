@@ -17,7 +17,7 @@ interface EditableExercise {
   muscleGroup: string; // Muscle group field preserved for filtering
   sets: number | '';
   reps: string;
-  weight: number | '';
+  weight: number |string;
 }
 
 interface EditableDay {
@@ -46,7 +46,7 @@ export const AssignPlanEditor = ({ adminEmail, allExercises }: AssignPlanEditorP
       return;
     }
 
-    const generated: EditableDay[] = plan.days.map((day, dayIndex) => {
+  const generated: EditableDay[] = plan.days.map((day, dayIndex) => {
       const exercisesForThisDay = getExercisesForDay(
         allExercises,
         plan.split,

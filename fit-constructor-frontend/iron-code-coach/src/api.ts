@@ -1,1 +1,1 @@
-export const API_URL = import.meta.env.VITE_API_URL || 'https://workout-app-y66k.onrender.com';
+export const API_URL = 'https://workout-app-y66k.onrender.com';

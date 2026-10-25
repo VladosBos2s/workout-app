@@ -1,0 +1,132 @@
+.wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--bg);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-h);
+}
+
+/* Сетка 2 колонки */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+/* Поле на всю ширину */
+.fieldFull {
+    grid-column: 1 / -1;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    
+}
+
+.label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text);
+}
+
+/* Инпуты */
+.input ,
+.select {
+    color: var(--text-h);
+        /* всегда чёрный независимо от темы */
+        background: var(--bg-muted);
+    padding: 0.6rem 0.75rem;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+ 
+    background: var(--bg-muted);
+    transition: border-color 0.15s;
+    outline: none;
+}
+
+.input:focus,
+.select:focus {
+    border-color: var(--accent);
+    background: var(--bg);
+}
+
+/* Тогл-группа */
+.toggle {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  
+}
+
+.toggleBtn {
+    flex: 1;
+    padding: 0.5rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+    white-space: nowrap;
+    background: var(--bg-muted);
+    border: 1.5px solid var(--border);
+    color: var(--text);
+}
+
+.toggleBtn:hover {
+    border-color: var(--accent);
+    color: var(--text-h);
+}
+
+.toggleBtnActive {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+}
+
+.toggleBtnActive:hover {
+    background: var(--bg);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Кнопка отправки */
+.submitBtn {
+    margin-top: 1.75rem;
+    width: 100%;
+    padding: 0.85rem;
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.submitBtn:hover {
+    background: var(--accent-hover);
+}
+
+/* Мобилки */
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fieldFull {
+        grid-column: 1;
+    }
+}

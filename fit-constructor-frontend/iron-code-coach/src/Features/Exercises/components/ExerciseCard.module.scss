@@ -1,0 +1,72 @@
+
+.container {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+    background: var(--bg);
+}
+
+.title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-h);
+}
+
+.muscleGroup {
+    font-size: 0.8rem;
+    color: var(--text);
+    text-transform: uppercase;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+.videoButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 16px;
+  
+  background-color: var(--bg-muted);
+  color: var(--text-h);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 8px solid currentColor;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover {
+    background-color: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+    box-shadow: var(--shadow);
+    transform: translateY(-1px);
+
+    &::before {
+      transform: scale(1.1);
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,626 @@
+[
+  {
+    "id": 1,
+    "title": "Жим штанги лежа",
+    "muscleGroup": "Грудные",
+    "description": "Король упражнений на грудь. Базовое движение со штангой лёжа на горизонтальной скамье. Развивает всю грудную мышцу, передние дельты и трицепс.",
+    "loads": {
+      "beginner": 40,
+      "intermediate": 60,
+      "advanced": 80
+    },
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 4,
+      "push-pull-legs": 4,
+      "arnold-split": 5,
+      "upper-lower + full-body": 3
+    },
+    "reps": "8-12"
+  },
+  {
+    "id": 2,
+    "title": "Жим в тренажере Hammer",
+    "muscleGroup": "Грудные",
+    "description": "Изолирующий тренажёр для добивки грудных после базы. Безопасен для суставов и позволяет качественно прочувствовать мышцу в конце тренировки.",
+    "loads": {
+      "beginner": 30,
+      "intermediate": 50,
+      "advanced": 70
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 4,
+      "push-pull-legs": 4,
+      "arnold-split": 5,
+      "upper-lower + full-body": 3
+    },
+    "reps": 12
+  },
+  {
+    "id": 3,
+    "title": "Жим гантелей",
+    "muscleGroup": "Грудные",
+    "description": "Жим гантелей под углом 30° с акцентом на upper часть груди. Вес указан для каждой гантели отдельно. Больший диапазон движения по сравнению со штангой.",
+    "loads": {
+      "beginner": 12.5,
+      "intermediate": 25,
+      "advanced": 40
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 4,
+      "push-pull-legs": 4,
+      "arnold-split": 5,
+      "upper-lower + full-body": 3
+    },
+    "reps": "8-12"
+  },
+  {
+    "id": 4,
+    "title": "Жим штанги на наклонной скамье",
+    "muscleGroup": "Грудные",
+    "description": "Наклонный жим штангой для проработки верхней и внутренней части грудных мышц. Формирует чёткую линию между грудью и дельтами.",
+    "loads": {
+      "beginner": 30,
+      "intermediate": 50,
+      "advanced": 70
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 4,
+      "push-pull-legs": 4,
+      "arnold-split": 5,
+      "upper-lower + full-body": 3
+    },
+    "reps": "8-12"
+  },
+  {
+    "id": 5,
+    "title": "Вертикальная тяга",
+    "muscleGroup": "Спина",
+    "description": "Тяга верхнего блока к груди широким хватом. Развивает широчайшие мышцы спины и формирует V-образный силуэт.",
+    "loads": {
+      "beginner": 50,
+      "intermediate": 70,
+      "advanced": 90
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 4,
+      "push-pull-legs": 4,
+      "arnold-split": 4,
+      "upper-lower + full-body": 3
+    },
+    "reps": "8-12"
+  },
+  {
+    "id": 6,
+    "title": "Горизонтальная тяга",
+    "muscleGroup": "Спина",
+    "description": "Тяга нижнего блока к поясу сидя. Прорабатывает средний отдел спины, трапеции и ромбовидные мышцы.",
+    "loads": {
+      "beginner": 40,
+      "intermediate": 60,
+      "advanced": 80
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 4,
+      "upper-lower": 3,
+      "push-pull-legs": 4,
+      "arnold-split": 4,
+      "upper-lower + full-body": 4
+    },
+    "reps": "8-12"
+  },
+  {
+    "id": 7,
+    "title": "Тяга гантели к поясу в наклоне",
+    "muscleGroup": "Спина",
+    "description": "Одностороннее упражнение с опорой на скамью. Устраняет дисбаланс между сторонами и глубоко прорабатывает широчайшие.",
+    "loads": {
+      "beginner": 30,
+      "intermediate": 40,
+      "advanced": 50
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 4,
+      "upper-lower": 3,
+      "push-pull-legs": 4,
+      "arnold-split": 4,
+      "upper-lower + full-body": 4
+    },
+    "reps": "8-12"
+  },
+  {
+    "id": 8,
+    "title": "Подтягивания с дополнительным весом",
+    "muscleGroup": "Спина",
+    "description": "Базовое упражнение на турнике с дополнительным отягощением. Отлично развивает широчайшие и бицепс одновременно.",
+    "loads": {
+      "beginner": 0,
+      "intermediate": 10,
+      "advanced": 20
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 4,
+      "push-pull-legs": 4,
+      "arnold-split": 4,
+      "upper-lower + full-body": 4
+    },
+    "reps": "8-12"
+  },
+  {
+    "id": 9,
+    "title": "Тяга Т-грифа",
+    "muscleGroup": "Спина",
+    "description": "Тяга Т-образного грифа в наклоне. Мощное базовое упражнение для толщины спины, акцент на средний и нижний отделы.",
+    "loads": {
+      "beginner": 40,
+      "intermediate": 60,
+      "advanced": 80
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 4,
+      "upper-lower": 3,
+      "push-pull-legs": 4,
+      "arnold-split": 4,
+      "upper-lower + full-body": 4
+    },
+    "reps": "8-12"
+  },
+  {
+    "id": 10,
+    "title": "Присед в Смите",
+    "muscleGroup": "Ноги",
+    "description": "Приседание в тренажёре Смита, безопасный вариант классического приседа.",
+    "loads": {
+      "beginner": 30,
+      "intermediate": 60,
+      "advanced": 100
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 4,
+      "push-pull-legs": 4,
+      "arnold-split": 4,
+      "upper-lower + full-body": 3
+    },
+    "reps": "8-12"
+  },
+  {
+    "id": 11,
+    "title": "Присед в Гакке",
+    "muscleGroup": "Ноги",
+    "description": "Приседание в тренажёре Гакк, акцент на квадрицепс.",
+    "loads": {
+      "beginner": 20,
+      "intermediate": 60,
+      "advanced": 120
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 4,
+      "push-pull-legs": 4,
+      "arnold-split": 4,
+      "upper-lower + full-body": 3
+    },
+    "reps": "8-12"
+  },
+  {
+    "id": 12,
+    "title": "Румынская тяга",
+    "muscleGroup": "Ноги",
+    "description": "Тяга на прямых ногах, акцент на бицепс бедра и ягодицы.",
+    "loads": {
+      "beginner": 30,
+      "intermediate": 60,
+      "advanced": 100
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 4,
+      "push-pull-legs": 4,
+      "arnold-split": 4,
+      "upper-lower + full-body": 3
+    },
+    "reps": "8-12"
+  },
+  {
+    "id": 13,
+    "title": "Жим ногами",
+    "muscleGroup": "Ноги",
+    "description": "Упражнение в тренажёре для развития квадрицепса и ягодиц.",
+    "loads": {
+      "beginner": 80,
+      "intermediate": 120,
+      "advanced": 200
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 4,
+      "push-pull-legs": 4,
+      "arnold-split": 4,
+      "upper-lower + full-body": 3
+    },
+    "reps": "10-15"
+  },
+  {
+    "id": 14,
+    "title": "Болгарские выпады",
+    "muscleGroup": "Ноги",
+    "description": "Выпады с задней ногой на скамье, акцент на квадрицепс и ягодицы.",
+    "loads": {
+      "beginner": 10,
+      "intermediate": 20,
+      "advanced": 40
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 3,
+      "push-pull-legs": 4,
+      "arnold-split": 4,
+      "upper-lower + full-body": 3
+    },
+    "reps": "10-12"
+  },
+  {
+    "id": 15,
+    "title": "Жим штанги стоя",
+    "muscleGroup": "Плечи",
+    "description": "Базовое упражнение для всего плечевого пояса. Развивает передние и средние дельты, трицепс и стабилизаторы корпуса.",
+    "loads": {
+      "beginner": 20,
+      "intermediate": 40,
+      "advanced": 60
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 4,
+      "push-pull-legs": 4,
+      "arnold-split": 5,
+      "upper-lower + full-body": 3
+    },
+    "reps": "8-12"
+  },
+  {
+    "id": 16,
+    "title": "Разведение гантелей в стороны",
+    "muscleGroup": "Плечи",
+    "description": "Изолирующее упражнение на средние дельты. Формирует ширину плеч и визуально сужает талию.",
+    "loads": {
+      "beginner": 5,
+      "intermediate": 10,
+      "advanced": 15
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 4,
+      "upper-lower": 4,
+      "push-pull-legs": 5,
+      "arnold-split": 5,
+      "upper-lower + full-body": 4
+    },
+    "reps": "12-15"
+  },
+  {
+    "id": 17,
+    "title": "Жим Арнольда",
+    "muscleGroup": "Плечи",
+    "description": "Жим гантелей с разворотом кистей. Прорабатывает все три головки дельтовидной мышцы за счёт вращательного движения.",
+    "loads": {
+      "beginner": 8,
+      "intermediate": 14,
+      "advanced": 20
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 4,
+      "push-pull-legs": 4,
+      "arnold-split": 5,
+      "upper-lower + full-body": 3
+    },
+    "reps": "10-12"
+  },
+  {
+    "id": 18,
+    "title": "Разведение рук в тренажере бабочка",
+    "muscleGroup": "Плечи",
+    "description": "Упражнение на задние дельты и вращательную манжету. Улучшает осанку и балансирует нагрузку после жимовых упражнений.",
+    "loads": {
+      "beginner": 15,
+      "intermediate": 25,
+      "advanced": 35
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 4,
+      "upper-lower": 4,
+      "push-pull-legs": 5,
+      "arnold-split": 5,
+      "upper-lower + full-body": 4
+    },
+    "reps": "12-15"
+  },
+  {
+    "id": 19,
+    "title": "Тяга штанги к подбородку",
+    "muscleGroup": "Плечи",
+    "description": "Комплексное упражнение для средних дельт и трапеций. Выполняется узким хватом с подъёмом локтей выше плеч.",
+    "loads": {
+      "beginner": 20,
+      "intermediate": 35,
+      "advanced": 50
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 4,
+      "upper-lower": 4,
+      "push-pull-legs": 5,
+      "arnold-split": 5,
+      "upper-lower + full-body": 4
+    },
+    "reps": "10-12"
+  },
+  {
+    "id": 20,
+    "title": "Скамья Скотта с гантелей",
+    "muscleGroup": "Бицепс",
+    "description": "Изолирующее упражнение на бицепс с опорой на скамью Скотта. Исключает читинг и максимально нагружает нижнюю часть бицепса.",
+    "loads": {
+      "beginner": 8,
+      "intermediate": 14,
+      "advanced": 20
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 3,
+      "push-pull-legs": 4,
+      "arnold-split": 4,
+      "upper-lower + full-body": 3
+    },
+    "reps": "10-12"
+  },
+  {
+    "id": 21,
+    "title": "Скамья Скотта со штангой",
+    "muscleGroup": "Бицепс",
+    "description": "Классическое упражнение Арнольда для пика бицепса. Штанга позволяет работать с большим весом при полной изоляции мышцы.",
+    "loads": {
+      "beginner": 15,
+      "intermediate": 30,
+      "advanced": 40
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 3,
+      "push-pull-legs": 4,
+      "arnold-split": 4,
+      "upper-lower + full-body": 3
+    },
+    "reps": "8-12"
+  },
+  {
+    "id": 22,
+    "title": "Тяга каната на бицепс",
+    "muscleGroup": "Бицепс",
+    "description": "Сгибание рук с канатной рукоятью у нижнего блока. Постоянное натяжение троса на протяжении всей амплитуды даёт качественное жжение в мышце.",
+    "loads": {
+      "beginner": 10,
+      "intermediate": 20,
+      "advanced": 30
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 3,
+      "push-pull-legs": 3,
+      "arnold-split": 4,
+      "upper-lower + full-body": 3
+    },
+    "reps": "12-15"
+  },
+  {
+    "id": 23,
+    "title": "Жим верхнего блока на трицепс",
+    "muscleGroup": "Трицепс",
+    "description": "Базовое изолирующее упражнение для трицепса у верхнего блока. Равномерно прорабатывает все три головки, особенно латеральную.",
+    "loads": {
+      "beginner": 15,
+      "intermediate": 25,
+      "advanced": 40
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 3,
+      "push-pull-legs": 4,
+      "arnold-split": 4,
+      "upper-lower + full-body": 3
+    },
+    "reps": "12-15"
+  },
+  {
+    "id": 24,
+    "title": "Разгибание блока над головой",
+    "muscleGroup": "Трицепс",
+    "description": "Упражнение с растяжением длинной головки трицепса. Выполняется стоя спиной к блоку с канатной рукоятью — длинная головка работает в растянутой позиции, что даёт максимальный стимул для роста.",
+    "loads": {
+      "beginner": 10,
+      "intermediate": 20,
+      "advanced": 30
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 3,
+      "push-pull-legs": 4,
+      "arnold-split": 4,
+      "upper-lower + full-body": 3
+    },
+    "reps": "12-15"
+  },
+  {
+    "id": 25,
+    "title": "Французский жим гантелями",
+    "muscleGroup": "Трицепс",
+    "description": "Изолирующее упражнение лёжа на скамье с гантелями. Отлично растягивает длинную головку трицепса и формирует массу всего трицепса. Вес указан для каждой гантели отдельно.",
+    "loads": {
+      "beginner": 8,
+      "intermediate": 14,
+      "advanced": 20
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 3,
+      "push-pull-legs": 4,
+      "arnold-split": 4,
+      "upper-lower + full-body": 3
+    },
+    "reps": "10-12"
+  },
+  {
+    "id": 26,
+    "title": "Подъём на икры стоя в тренажёре",
+    "muscleGroup": "Икры",
+    "description": "Базовое упражнение для икроножной мышцы в тренажёре стоя. Икроножная мышца работает в полную амплитуду — от максимального растяжения до пикового сокращения.",
+    "loads": {
+      "beginner": 40,
+      "intermediate": 70,
+      "advanced": 100
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 4,
+      "push-pull-legs": 4,
+      "arnold-split": 4,
+      "upper-lower + full-body": 3
+    },
+    "reps": "15-20"
+  },
+  {
+    "id": 27,
+    "title": "Подъём на икры сидя в тренажёре",
+    "muscleGroup": "Икры",
+    "description": "Изолирующее упражнение для камбаловидной мышцы. В положении сидя икроножная мышца отключается — вся нагрузка уходит на глубокую камбаловидную, которая формирует толщину икры.",
+    "loads": {
+      "beginner": 30,
+      "intermediate": 50,
+      "advanced": 80
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 4,
+      "push-pull-legs": 4,
+      "arnold-split": 4,
+      "upper-lower + full-body": 3
+    },
+    "reps": "15-20"
+  },
+  {
+    "id": 28,
+    "title": "Подъём на икры в жиме ногами",
+    "muscleGroup": "Икры",
+    "description": "Подъём на носки в тренажёре для жима ногами. Позволяет работать с большим весом и хорошо растягивает икроножную мышцу за счёт угла платформы.",
+    "loads": {
+      "beginner": 60,
+      "intermediate": 100,
+      "advanced": 150
+    },
+    "unit": "кг",
+    "sets": {
+      "full-body": 3,
+      "upper-lower": 3,
+      "push-pull-legs": 4,
+      "arnold-split": 4,
+      "upper-lower + full-body": 3
+    },
+    "reps": "15-20"
+  },
+  {
+    "id": 29,
+    "title": "Беговая дорожка",
+    "muscleGroup": "Кардио",
+    "description": "Бег в умеренном темпе с пульсом 120-140 уд/мин — жиросжигающая зона. При таком пульсе организм использует жир как основной источник энергии, а не углеводы.",
+    "loads": {
+      "beginner": "20",
+      "intermediate": "35",
+      "advanced": "50"
+    },
+    "unit": "минут",
+    "reps": "120-140 уд/мин"
+  },
+  {
+    "id": 30,
+    "title": "Ходьба",
+    "muscleGroup": "Кардио",
+    "description": "Обычная ходьба в умеренном темпе — самый щадящий вид кардио. Идеально для восстановительных дней и новичков. Минимальная нагрузка на суставы при хорошем жиросжигающем эффекте.",
+    "loads": {
+      "beginner": "30",
+      "intermediate": "45",
+      "advanced": "60"
+    },
+    "unit": "минут",
+    "reps": "120-130 уд/мин"
+  },
+  {
+    "id": 31,
+    "title": "Лестничный тренажёр",
+    "muscleGroup": "Кардио",
+    "description": "Подъём на лестничном тренажёре в умеренном темпе. Сочетает кардио и тонизирование ягодиц и ног. Эффективно сжигает жир и формирует нижнюю часть тела одновременно.",
+    "loads": {
+      "beginner": "15",
+      "intermediate": "25",
+      "advanced": "40"
+    },
+    "unit": "минут",
+    "reps": "120-140 уд/мин"
+  },
+  {
+    "id": 32,
+    "title": "Велотренажёр",
+    "muscleGroup": "Кардио",
+    "description": "Кардио на велотренажёре в умеренном темпе. Минимальная нагрузка на колени и позвоночник по сравнению с бегом. Отлично подходит для людей с проблемами суставов.",
+    "loads": {
+      "beginner": "20",
+      "intermediate": "35",
+      "advanced": "50"
+    },
+    "unit": "минут",
+    "reps": "120-140 уд/мин"
+  },
+  {
+    "id": 33,
+    "title": "Эллиптический тренажёр",
+    "muscleGroup": "Кардио",
+    "description": "Кардио на эллипсе в умеренном темпе. Задействует одновременно руки и ноги, что увеличивает расход калорий. Плавное движение без ударной нагрузки на суставы.",
+    "loads": {
+      "beginner": "20",
+      "intermediate": "35",
+      "advanced": "50"
+    },
+    "unit": "минут",
+    "reps": "120-140 уд/мин"
+  }
+]

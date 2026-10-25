@@ -1,0 +1,85 @@
+.adminContainer {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: var(--bg-muted); /* Uses dark background variable in dark mode */
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  font-family: inherit;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-h); /* Uses heading text variable */
+  }
+
+  p {
+    text-align: center;
+    color: var(--text); /* Uses standard text variable */
+    font-size: 16px;
+  }
+}
+
+/* Admin navigation tabs container */
+.adminTabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 16px;
+}
+
+/* Individual tab button */
+.tabBtn {
+  background-color: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  /* Hover state */
+  &:hover {
+    background-color: var(--bg-muted);
+    color: var(--text-h);
+    border-color: var(--accent);
+  }
+
+  /* Active tab state */
+  &.active {
+    background-color: var(--accent);
+    color: var(--bg); /* Ensures high contrast using background variable */
+    border-color: var(--accent);
+    box-shadow: var(--shadow);
+
+    /* Hover state for active tab */
+    &:hover {
+      background-color: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+  }
+}
+
+/* Content area animation wrapper */
+.adminContent {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Fade-in keyframes animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

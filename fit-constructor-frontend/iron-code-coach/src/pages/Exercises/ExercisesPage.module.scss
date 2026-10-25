@@ -1,0 +1,102 @@
+/* Main wrapper container */
+.wrapper {
+    padding: 2rem 0;
+}
+
+/* Filters container */
+.filters {
+    padding: 0 2rem 1rem !important;
+}
+
+/* Individual filter slide item */
+.filterSlide {
+    width: auto !important;
+}
+
+/* Filter button styling */
+.filterBtn {
+    padding: 0.4rem 1rem;
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    background: var(--bg-muted);
+    color: var(--text);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+
+    &:hover {
+        border-color: var(--accent);
+        color: var(--text-h);
+    }
+}
+
+/* Active filter button state */
+.filterBtnActive {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+
+    &:hover {
+        background: var(--bg);
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+}
+
+/* Main slider container wrapper */
+.slider {
+    width: 100%;
+    padding: 1rem 0 3rem !important;
+    position: relative;
+    overflow: hidden; /* Ensures contents don't bleed out of container boundaries */
+}
+
+/* Base style for individual slides inside Swiper */
+:global(.swiper-slide) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+
+    .slide {
+        width: 100%;
+        opacity: 0.6;
+        transform: scale(0.85);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+}
+
+/* Active slide styling for focus effect */
+:global(.swiper-slide-active) {
+    .slide {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Swiper pagination bullets styling (placed outside slide blocks) */
+:global(.swiper-pagination) {
+    bottom: 10px !important;
+
+    /* Inactive bullet style */
+    :global(.swiper-pagination-bullet) {
+        background-color: var(--border); 
+        opacity: 0.6;
+        width: 8px;
+        height: 8px;
+        transition: all 0.2s ease;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    /* Active bullet style */
+    :global(.swiper-pagination-bullet-active) {
+        background-color: var(--accent); 
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}

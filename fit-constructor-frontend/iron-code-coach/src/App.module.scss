@@ -1,0 +1,153 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    animation: fadeIn 0.2s ease;
+}
+
+.modal {
+    background: var(--bg-muted);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow);
+    animation: slideUp 0.25s ease;
+}
+
+.closeBtn {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.85rem;
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap; /* Разрешаем элементам переноситься на новую строку */
+    align-items: center;
+    justify-content: center; /* Центрируем элементы, если они переносятся */
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+}
+
+.navLink {
+    color: var(--text);
+    background: var(--bg);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    border: 2px solid var(--border);
+
+    &:hover {
+        background: var(--bg-muted);
+        color: var(--text-h);
+        border-color: var(--accent);
+    }
+
+    &.active {
+        background: var(--accent);
+        color: var(--bg);
+        border-color: var(--accent);
+
+        &:hover {
+            background: var(--accent-hover);
+            color: var(--bg);
+            border-color: var(--accent-hover);
+        }
+    }
+}
+
+.switcherContainer {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs, 4px);
+    background-color: var(--bg-muted);
+    padding: var(--spacing-xs, 4px);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    width: fit-content;
+
+    .langBtn {
+        background: transparent;
+        border: none;
+        color: var(--text);
+        font-weight: 600;
+        font-size: 13px;
+        padding: 6px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            color: var(--text-h);
+            background-color: var(--border);
+        }
+
+        &.active {
+            background-color: var(--accent);
+            color: var(--bg);
+            box-shadow: var(--shadow);
+        }
+    }
+}
+
+.authBtn {
+    margin-left: auto;
+    color: var(--text);
+    background: var(--bg);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    border: 2px solid var(--border);
+
+    &:hover {
+        border-color: var(--accent);
+        color: var(--text-h);
+        background: var(--bg-muted);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

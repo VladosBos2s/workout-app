@@ -1,0 +1,203 @@
+.editorContainer {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  max-width: 800px;
+  margin: 0 auto;
+
+  h3 {
+    color: var(--text-h);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  h4 {
+    color: var(--red-active);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+.configForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  input[type='email'],
+  select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--bg-muted);
+    color: var(--text-h);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+      border-color: var(--red-active);
+    }
+  }
+
+  .fieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    label {
+      font-size: 0.9rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+  }
+
+  .generateBtn {
+    background-color: var(--bg-black);
+    color: var(--text-white);
+    padding: 0.85rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: var(--accent-hover);
+    }
+  }
+}
+
+.daysEditor {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dayCard {
+  background-color: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.2rem;
+
+  h5 {
+    color: var(--text-h);
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+  }
+}
+
+.exercisesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.exerciseRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: var(--bg);
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+
+  @media (min-width: 600px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .exTitle {
+    font-weight: 600;
+    color: var(--text-h);
+    flex: 1;
+  }
+}
+
+.inputsGroup {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--text);
+
+    input {
+      width: 65px;
+      padding: 0.4rem;
+      background-color: var(--bg-muted);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-h);
+      text-align: center;
+
+      &:focus {
+        outline: none;
+        border-color: var(--red-active);
+      }
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+
+  button {
+    padding: 0.75rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .cancelBtn {
+    background-color: var(--border);
+    color: var(--text-h);
+  }
+
+  .saveBtn {
+    background-color: var(--red-active);
+    color: var(--text-white);
+  }
+
+}
+
+.selectWrapper {
+    .exerciseSelect {
+    color: var(--text-h);
+        /* всегда чёрный независимо от темы */
+        background: var(--bg-muted);
+    padding: 0.6rem 0.75rem;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+ 
+    background: var(--bg-muted);
+    transition: border-color 0.15s;
+    outline: none;
+}
+
+
+.exerciseSelect:focus {
+    border-color: var(--accent);
+    background: var(--bg);
+}
+
+}

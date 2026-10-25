@@ -1,0 +1,221 @@
+{
+  "nav": {
+    "home": "Home",
+    "calculator": "Calculator",
+    "exercises": "Exercises",
+    "plans": "Workout Plans",
+    "profile": "Profile",
+    "admin": "Admin panel",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "home": {
+    "titleMain": "Create your ideal",
+    "titleHighlight": "workout plan",
+    "subtitle": "The smart builder calculates calories, selects a split according to your schedule, and plans weight progression 8 weeks ahead.",
+    "startButton": "Get Started Free",
+    "card1Title": "Auto-split selection",
+    "card1Text": "Full-Body, Upper-Lower, or Push-Pull depending on your workout days.",
+    "card2Title": "Load progression",
+    "card2Text": "The program automatically calculates weight increments for strength and tracks cardio time.",
+    "card3Title": "Progress saving",
+    "card3Text": "Your results are always at hand, your plan won't reset on reload."
+  },
+  "calculator": {
+    "title": "Your Parameters",
+    "gender": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "age": "Age",
+    "agePlaceholder": "e.g. 25",
+    "weight": "Weight (kg)",
+    "weightPlaceholder": "e.g. 70",
+    "height": "Height (cm)",
+    "heightPlaceholder": "e.g. 175",
+    "activityLevel": "Activity Level",
+    "goal": "Goal",
+    "experienceLevel": "Fitness Level",
+    "trainingsPerWeek": "Workouts per week",
+    "calculateBtn": "Calculate",
+    "resultsTitle": "Your Results",
+    "calories": "Calories",
+    "protein": "Protein",
+    "carbs": "Carbs",
+    "fats": "Fats",
+    "kcalDay": "kcal/day",
+    "gDay": "g/day",
+    "suggestedWorkouts": "Suggested Workouts (select one):"
+  },
+  "constants": {
+    "activity": {
+      "sedentary": "Sedentary lifestyle (office worker)",
+      "light": "Light activity (light workouts 1-3 days/week)",
+      "moderate": "Moderate activity (moderate workouts 3-5 days/week)",
+      "high": "High activity (heavy workouts 6-7 days/week)",
+      "extreme": "Very high activity (intense daily workouts or physical labor)"
+    },
+    "goal": {
+      "bulk": "Muscle Gain",
+      "cut": "Fat Loss",
+      "maintain": "Maintenance"
+    },
+    "experience": {
+      "beginner": "Beginner (0 - 1 year of training)",
+      "intermediate": "Intermediate (1 - 2 years of training)",
+      "advanced": "Advanced (2+ years of training)"
+    },
+    "frequency": {
+      "timesPerWeek": "{{count}} times a week"
+    },
+    "muscles": {
+      "chest": "Chest",
+      "back": "Back",
+      "legs": "Legs",
+      "shoulders": "Shoulders",
+      "biceps": "Biceps",
+      "triceps": "Triceps",
+      "cardio": "Cardio"
+    }
+  },
+  "exercises": {
+  "loading": "Loading exercises...",
+  "errorServer": "Server connection error"
+},
+"profile": {
+    "title": "Personal Account",
+    "guest": "Logged in as guest",
+    "loginBtn": "Log In",
+    "logoutBtn": "Log Out",
+    "yourParameters": "Your Parameters",
+    "weight": "Weight",
+    "height": "Height",
+    "age": "Age",
+    "trainings": "Workouts",
+    "kg": "kg",
+    "cm": "cm",
+    "years": "yrs",
+    "daysPerWeek": "days/wk",
+    "nutritionTitle": "Calorie & Macro Calculation",
+    "dailyNorm": "Daily intake",
+    "kcal": "kcal",
+    "g": "g",
+    "protein": "Protein",
+    "fats": "Fats",
+    "carbs": "Carbs",
+    "savedWorkouts": "Saved Workouts",
+    "authPrompt": "Log in to view your saved workouts.",
+    "loading": "Loading...",
+    "emptyList": "You have no saved workouts yet.",
+    "delete": "Delete",
+    "deleteConfirm": "Are you sure you want to delete this workout from your history?",
+    "deleteError": "Failed to delete workout",
+    "fetchError": "Error fetching workouts"
+  },
+  "auth": {
+    "loginTitle": "Log In",
+    "registerTitle": "Sign Up",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "emailPlaceholder": "example@mail.com",
+    "passwordPlaceholder": "*****",
+    "loginBtn": "Log In",
+    "registerBtn": "Sign Up",
+    "hasAccount": "Already have an account?",
+    "noAccount": "New here?",
+    "toLogin": "Log In",
+    "toRegister": "Sign Up",
+    "defaultError": "Invalid email or password"
+  },
+ "errors": {
+    "USER_ALREADY_EXISTS": "User with this email already exists",
+    "INVALID_CREDENTIALS": "Invalid email or password",
+    "EMAIL_PASSWORD_REQUIRED": "Please fill in email and password"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "tabExercises": "Exercises",
+    "tabPlans": "Assign Plan to Client",
+    "loadingExercises": "Loading exercise database...",
+    "fetchError": "Failed to load exercises"
+  },
+  "adminForm": {
+    "title": "Add New Exercise (Admin Panel)",
+    "titlePlaceholder": "Exercise name",
+    "selectMusclePlaceholder": "Select muscle group...",
+    "descriptionPlaceholder": "Description of execution technique",
+    "weightPlaceholder": "Default weight (kg)",
+    "setsPlaceholder": "Number of sets",
+    "repsPlaceholder": "Number of reps per set",
+    "videoPlaceholder": "Video link (YouTube / mp4)",
+    "submitBtn": "Add to Database",
+    "negativeValuesError": "Weight and number of sets cannot be negative!"
+  },
+  "assignPlan": {
+    "title": "Client Workout Plan Editor",
+    "emailPlaceholder": "User (client) email",
+    "splitLabel": "Split:",
+    "levelLabel": "Fitness level:",
+    "generateBtn": "Generate Plan for Customization",
+    "editingTitle": "Customizing exercises for: {{email}}",
+    "timeLabel": "Time (minutes):",
+    "setsLabel": "Sets:",
+    "repsLabel": "Reps:",
+    "weightLabel": "Weight (kg):",
+    "cancelBtn": "Cancel / Back",
+    "saveBtn": "Save and Assign to Client",
+    "enterEmailAlert": "Enter client email!",
+    "planNotFoundAlert": "Plan not found!",
+    "splits": {
+      "fullBody2": "Full Body (2 days)",
+      "fullBody3": "Full Body (3 days)",
+      "upperLowerFullBody3": "Upper-Lower / Full Body (3 days)",
+      "upperLower4": "Upper-Lower (4 days)",
+      "upperLower5": "Upper-Lower (5 days)",
+      "pushPullLegs5": "Push-Pull-Legs (5 days)",
+      "arnoldSplit5": "Arnold Split (5 days)"
+    },
+    "levels": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    }
+  },
+  "exerciseCard": {
+    "timeLabel": "Time:",
+    "minutes": "minutes",
+    "weightLabel": "Weight:",
+    "setsLabel": "Sets:",
+    "repsLabel": "Reps:",
+    "watchVideoBtn": "Watch Video"
+  },
+  "plans": {
+    "loading": "Loading workout plan...",
+    "fetchExercisesError": "Error loading exercise database",
+    "serverErrorExercises": "Failed to load exercises from server",
+    "customPlanTitle": "Your Personal Trainer Plan",
+    "groupLabel": "Group",
+    "minutes": "minutes",
+    "cardioTag": "Cardio",
+    "setsShort": "sets",
+    "repsShort": "reps",
+    "kg": "kg",
+    "notFound": "Plan not found.",
+    "daysPerWeekText": "days per week",
+    "weeksBlock1": "Wk. 1-2",
+    "weeksBlock2": "Wk. 3-4",
+    "weeksBlock3": "Wk. 5-6",
+    "weeksBlock4": "Wk. 7-8"
+  },
+  "plansData": {
+    "dayFullBody": "Day {{letter}} — Full Body",
+    "dayUpper": "Day {{letter}} — Upper Body",
+    "dayLower": "Day {{letter}} — Lower Body",
+    "dayCardio": "Day {{letter}} — Cardio",
+    "dayPush": "Day {{letter}} — PUSH",
+    "dayPull": "Day {{letter}} — PULL",
+    "dayLegs": "Day {{letter}} — LEGS",
+    "dayChestBack": "Day {{letter}} — Chest + Back",
+    "dayShouldersArms": "Day {{letter}} — Shoulders + Arms",
+    "dayLegsCalves": "Day {{letter}} — Legs"
+  }
+}

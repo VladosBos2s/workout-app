@@ -1,0 +1,228 @@
+{
+ "nav": {
+    "home": "Главная",
+    "calculator": "Калькулятор",
+    "exercises": "Упражнения",
+    "plans": "Планы тренировок",
+    "profile": "Профиль",
+    "admin": "Админка",
+    "login": "Войти",
+    "logout": "Выйти"
+  },
+ "home": {
+    "titleMain": "Создай свой идеальный",
+    "titleHighlight": "тренировочный план",
+    "subtitle": "Умный конструктор рассчитает калории, подберет сплит под твой график и распишет прогрессию весов на 8 недель вперед.",
+    "startButton": "Начать бесплатно",
+    "card1Title": "Авто-подбор сплита",
+    "card1Text": "Full-Body, Upper-Lower или Push-Pull в зависимости от твоих дней недели.",
+    "card2Title": "Прогрессия нагрузок",
+    "card2Text": "Программа сама рассчитывает шаг в весах для силовых и фиксирует время для кардио.",
+    "card3Title": "Сохранение прогресса",
+    "card3Text": "Твои результаты всегда под рукой, план не сбросится при перезагрузке."
+  },
+  
+  "calculator": {
+    "title": "Твои параметры",
+    "gender": "Пол",
+    "male": "Мужчина",
+    "female": "Женщина",
+    "age": "Возраст",
+    "agePlaceholder": "Например, 25",
+    "weight": "Вес (кг)",
+    "weightPlaceholder": "Например, 70",
+    "height": "Рост (см)",
+    "heightPlaceholder": "Например, 175",
+    "activityLevel": "Уровень активности",
+    "goal": "Цель",
+    "experienceLevel": "Уровень подготовки",
+    "trainingsPerWeek": "Количество тренировок в неделю",
+    "calculateBtn": "Рассчитать",
+    "resultsTitle": "Твои результаты",
+    "calories": "Калории",
+    "protein": "Белки",
+    "carbs": "Углеводы",
+    "fats": "Жиры",
+    "kcalDay": "ккал/день",
+    "gDay": "г/день",
+    "suggestedWorkouts": "Предлагаемые тренировки (выберите одну из них):"
+  },
+  "constants": {
+    "activity": {
+      "sedentary": "Сидячий образ жизни (офисный работник)",
+      "light": "Легкая активность (лёгкие тренировки 1-3 дня/неделя)",
+      "moderate": "Средняя активность (умеренные тренировки 3-5 дней/неделя)",
+      "high": "Высокая активность (тяжёлые тренировки 6-7 дней/неделя)",
+      "extreme": "Очень высокая активность (очень тяжёлые тренировки ежедневно или физическая работа)"
+    },
+    "goal": {
+      "bulk": "Набор мышечной массы",
+      "cut": "Похудение",
+      "maintain": "Поддержание фигуры"
+    },
+    "experience": {
+      "beginner": "Новичок (только пришёл в зал - 1 год тренировок)",
+      "intermediate": "Уже знаешь основы (1-2 года тренировок)",
+      "advanced": "Атлет (2+ года тренировок)"
+    },
+    "frequency": {
+      "timesPerWeek": "{{count}} раза в неделю"
+    },
+    "muscles": {
+      "chest": "Грудные",
+      "back": "Спина",
+      "legs": "Ноги",
+      "shoulders": "Плечи",
+      "biceps": "Бицепс",
+      "triceps": "Трицепс",
+      "cardio": "Кардио"
+    }
+  },
+  "exercises": {
+  "loading": "Загрузка упражнений...",
+  "errorServer": "Ошибка связи с сервером"
+},
+
+  "profile": {
+    "title": "Личный кабинет",
+    "guest": "Вы вошли как гость",
+    "loginBtn": "Войти в аккаунт",
+    "logoutBtn": "Выйти из аккаунта",
+    "yourParameters": "Твои параметры",
+    "weight": "Вес",
+    "height": "Рост",
+    "age": "Возраст",
+    "trainings": "Тренировки",
+    "kg": "кг",
+    "cm": "см",
+    "years": "лет",
+    "daysPerWeek": "дн/нед",
+    "nutritionTitle": "Расчёт калорий и БЖУ",
+    "dailyNorm": "Дневная норма",
+    "kcal": "ккал",
+    "g": "г",
+    "protein": "Белки",
+    "fats": "Жиры",
+    "carbs": "Углеводы",
+    "savedWorkouts": "Сохранённые тренировки",
+    "authPrompt": "Авторизуйтесь, чтобы видеть сохранённые тренировки.",
+    "loading": "Загрузка...",
+    "emptyList": "У вас пока нет сохранённых тренировок.",
+    "delete": "Удалить",
+    "deleteConfirm": "Вы уверены, что хотите удалить эту тренировку из истории?",
+    "deleteError": "Не удалось удалить тренировку",
+    "fetchError": "Ошибка при загрузке тренировок"
+  },
+  
+  "auth": {
+    "loginTitle": "Вход в аккаунт",
+    "registerTitle": "Регистрация",
+    "emailLabel": "Email",
+    "passwordLabel": "Пароль",
+    "emailPlaceholder": "example@mail.com",
+    "passwordPlaceholder": "*****",
+    "loginBtn": "Войти",
+    "registerBtn": "Зарегистрироваться",
+    "hasAccount": "Уже есть аккаунт?",
+    "noAccount": "Впервые у нас?",
+    "toLogin": "Войти",
+    "toRegister": "Зарегистрироваться",
+    "defaultError": "Неправильный email или пароль"
+  },
+  "errors": {
+  "INVALID_CREDENTIALS": "Неверный email или пароль",
+  "USER_ALREADY_EXISTS": "Пользователь с таким email уже существует",
+  "EMAIL_PASSWORD_REQUIRED": "Заполните email и пароль"
+},
+"admin": {
+    "title": "Панель администратора",
+    "tabExercises": "Упражнения",
+    "tabPlans": "Назначить план клиенту",
+    "loadingExercises": "Загрузка базы упражнений...",
+    "fetchError": "Не удалось загрузить упражнения"
+  },
+  "adminForm": {
+    "title": "Добавить новое упражнение (Админ-панель)",
+    "titlePlaceholder": "Название упражнения",
+    "selectMusclePlaceholder": "Выберите группу мышц...",
+    "descriptionPlaceholder": "Описание техники выполнения",
+    "weightPlaceholder": "Вес по умолчанию (кг)",
+    "setsPlaceholder": "Количество подходов",
+    "repsPlaceholder": "Количество повторений в подходе",
+    "videoPlaceholder": "Ссылка на видео (YouTube / mp4)",
+    "submitBtn": "Добавить в базу",
+    "negativeValuesError": "Вес и количество подходов не могут быть отрицательными!"
+  },
+  "assignPlan": {
+    "title": "Редактор плана тренировок для клиента",
+    "emailPlaceholder": "Email пользователя (клиента)",
+    "splitLabel": "Сплит:",
+    "levelLabel": "Уровень подготовки:",
+    "generateBtn": "Сгенерировать план для настройки",
+    "editingTitle": "Настройка упражнений для: {{email}}",
+    "timeLabel": "Время (минут):",
+    "setsLabel": "Подходы:",
+    "repsLabel": "Повторения:",
+    "weightLabel": "Вес (кг):",
+    "cancelBtn": "Отменить / Назад",
+    "saveBtn": "Сохранить и назначить клиенту",
+    "enterEmailAlert": "Введите email клиента!",
+    "planNotFoundAlert": "План не найден!",
+    "splits": {
+      "fullBody2": "Full Body (2 дня)",
+      "fullBody3": "Full Body (3 дня)",
+      "upperLowerFullBody3": "Верх-низ / Full Body (3 дня)",
+      "upperLower4": "Верх низ (4 дня)",
+      "upperLower5": "Верх низ + день кардио (5 дней)",
+      "pushPullLegs5": "Push-Pull-Legs (5 дней)",
+      "arnoldSplit5": "Arnold Split (5 дней)"
+    },
+    "levels": {
+      "beginner": "Новичок",
+      "intermediate": "Средний",
+      "advanced": "Продвинутый"
+    }
+  },
+  "exerciseCard": {
+    "timeLabel": "Время:",
+    "minutes": "минут",
+    "weightLabel": "Вес:",
+    "setsLabel": "Подходы:",
+    "repsLabel": "Повторения:",
+    "watchVideoBtn": "Смотреть видео"
+  },
+  "plans": {
+    "loading": "Загрузка плана тренировок...",
+    "fetchExercisesError": "Ошибка при загрузке базы упражнений",
+    "serverErrorExercises": "Не удалось загрузить упражнения с сервера",
+    "customPlanTitle": "Ваш персональный план от тренера",
+    "groupLabel": "Группа",
+    "minutes": "минут",
+    "cardioTag": "Кардио",
+    "setsShort": "подх.",
+    "repsShort": "повт.",
+    "kg": "кг",
+    "notFound": "План не найден.",
+    "daysPerWeekText": "дней в неделю",
+    "weeksBlock1": "Нед. 1-2",
+    "weeksBlock2": "Нед. 3-4",
+    "weeksBlock3": "Нед. 5-6",
+    "weeksBlock4": "Нед. 7-8"
+  },
+  "plansData": {
+    "dayFullBody": "День {{letter}} — Всё тело",
+    "dayUpper": "День {{letter}} — Верх тела",
+    "dayLower": "День {{letter}} — Низ тела",
+    "dayCardio": "День {{letter}} — Кардио",
+    "dayPush": "День {{letter}} — PUSH",
+    "dayPull": "День {{letter}} — PULL",
+    "dayLegs": "День {{letter}} — LEGS",
+    "dayChestBack": "День {{letter}} — Грудные + спина",
+    "dayShouldersArms": "День {{letter}} — Плечи + руки",
+    "dayLegsCalves": "День {{letter}} — Ноги"
+    
+  }
+
+}
+
+

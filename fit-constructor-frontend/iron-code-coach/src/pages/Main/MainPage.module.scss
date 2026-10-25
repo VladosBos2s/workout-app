@@ -1,0 +1,107 @@
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 75vh;
+  padding: 4rem 2rem;
+  background-color: var(--bg); // Чистый белый/темный фон из настроек
+  color: var(--text);
+  font-family: var(--sans);
+}
+
+.title {
+  font-family: var(--heading);
+  font-size: 3.5rem;
+  font-weight: 500; // Твоя базовая жирность заголовков
+  line-height: 1.2;
+  max-width: 800px;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1.68px; // Из твоего h1
+  color: var(--text-h);
+
+  span {
+    color: var(--red-active); // Твой акцентный красный
+  }
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: var(--text);
+  max-width: 600px;
+  margin-bottom: 3rem;
+  line-height: 145%; // Из твоего body
+}
+
+
+.ctaBtn {
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: 600;
+  
+  /* Use theme variables for background and text to ensure proper contrast */
+  background-color: var(--accent); 
+  color: var(--bg); /* Adapts automatically: dark text on light accent, light text on dark accent */
+  
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: all 0.2s ease-in-out;
+
+  /* Hover state with subtle lift and smooth color transition */
+  &:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+
+  /* Active press state */
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Сетка карточек
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  width: 100%;
+  margin-top: 4rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.featureCard {
+  background: var(--bg-muted); // Приглушенный фон для блоков
+  border: 1px solid var(--border); // Твоя рамка
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: left;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+  }
+
+  h3 {
+    font-family: var(--heading);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-h);
+  }
+
+  p {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 145%;
+  }
+}

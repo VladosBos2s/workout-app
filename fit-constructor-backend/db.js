@@ -7,6 +7,10 @@ const pool = new Pool({
   database: process.env.DB_NAME,
   password: process.env.DB_PASSWORD, // Если здесь undefined, падает ошибка SASL
   port: process.env.DB_PORT,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false // Обязательно для Supabase в облаке
+  }
 });
 console.log('База данных postgreSQL успешно запущена!')
 module.exports = pool;

@@ -5,7 +5,7 @@ import { getExercisesForDay, getProgressionBlocks } from '../../Features/plans/u
 import type { SplitType, TrainingsperWeek, ExperienceLevel } from '../../shared/types';
 import type { Exercise } from '../../Features/Exercises/types';
 import styles from './PlansPage.module.scss';
-
+import { API_URL } from '../../api';
 interface PlansPageProps {
   userEmail: string;
   userSplit: SplitType;
@@ -31,7 +31,7 @@ export const PlansPage = ({ userEmail, userSplit, trainingsPerWeek, userLevel }:
   useEffect(() => {
     const fetchExercises = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/exercises', {
+        const response = await fetch(`${API_URL}/api/exercises`, {
           headers: {
             'Accept-Language': i18n.language, // Pass current language to backend
           },
@@ -57,7 +57,7 @@ export const PlansPage = ({ userEmail, userSplit, trainingsPerWeek, userLevel }:
     const fetchCustomPlan = async () => {
       if (!userEmail) return;
       try {
-        const response = await fetch(`http://localhost:5000/api/user-full-workouts?email=${userEmail}`, {
+        const response = await fetch(`${API_URL}/api/user-full-workouts?email=${userEmail}`, {
           headers: {
             'Accept-Language': i18n.language, // Pass language to backend for translated exercise titles
           },

@@ -4,7 +4,7 @@ import { AdminExerciseForm } from '../components/AdminExerciseForm/AdminExercise
 import { AssignPlanEditor } from '../components/AssignPlanEditor/AssignPlanEditor';
 import type { Exercise } from '../../../Features/Exercises/types';
 import styles from './AdminPage.module.scss';
-
+import { API_URL } from '../../../api';
 interface AdminPageProps {
   adminEmail: string;
 }
@@ -19,7 +19,7 @@ export const AdminPage = ({ adminEmail }: AdminPageProps) => {
   useEffect(() => {
     const fetchExercises = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/exercises');
+        const response = await fetch(`${API_URL}/api/exercises`);
         if (!response.ok) throw new Error(t('admin.fetchError'));
         const data = await response.json();
         setAllExercises(data);

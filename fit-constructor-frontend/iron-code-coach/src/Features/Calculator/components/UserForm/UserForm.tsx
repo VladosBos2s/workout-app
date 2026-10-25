@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { type ActivityLevel, type Gender, type UserStats, type TrainingsperWeek } from '../../../../shared/types';
 import styles from './UserForm.module.scss';
 import { ACTIVITY_OPTIONS, EXPERIENCE_LEVEL_OPTIONS, GOAL_OPTIONS, TRAINING_FREQUENCY_OPTIONS } from '../../../../shared/constants';
-
+import { API_URL } from '../../../../api';
 interface UserFormProps {
     stats: UserStats;
     userEmail: string; 
@@ -19,7 +19,7 @@ export function UserForm({ stats, userEmail, onChange, onSubmit }: UserFormProps
 
     const saveParametersToDB = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/user/parameters', {
+        const response = await fetch(`${API_URL}/api/user/parameters`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({

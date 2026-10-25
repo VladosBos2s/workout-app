@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import styles from './ProfilePage.module.scss';
 import type { CalculationResult, UserStats } from "../../shared/types";
+import { API_URL } from "../../api";
 
 // Saved workout interface type
 interface SavedWorkout {
@@ -36,7 +37,7 @@ export const ProfilePage = ({ userEmail, stats, result, onLogout }: ProfilePageP
     const loadData = async () => {
       setIsLoading(true);
       try {
-        const res = await fetch(`http://localhost:5000/api/saved-workouts?email=${encodeURIComponent(userEmail)}`);
+        const res = await fetch(`${API_URL}/api/saved-workouts?email=${encodeURIComponent(userEmail)}`);
         const data = await res.json();
         if (isMounted) {
           setSavedWorkouts(Array.isArray(data) ? data : []);
@@ -62,7 +63,7 @@ export const ProfilePage = ({ userEmail, stats, result, onLogout }: ProfilePageP
     if (!confirm(t('profile.deleteConfirm'))) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/saved-workouts/${id}`, { method: 'DELETE' });
+      const response = await fetch(`${API_URL}/api/saved-workouts/${id}`, { method: 'DELETE' });
 
       if (!response.ok) throw new Error('Error deleting workout');
 

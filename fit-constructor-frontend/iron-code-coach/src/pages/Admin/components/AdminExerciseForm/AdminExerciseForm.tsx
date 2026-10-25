@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './AdminExerciseForm.module.scss';
 import { MUSCLE_GROUPS } from '../../../../shared/constants';
-
+import { API_URL } from '../../../../api';
 interface AdminFormProps {
   userEmail: string;
   onExerciseAdded: () => void;
@@ -29,7 +29,7 @@ export const AdminExerciseForm = ({ userEmail, onExerciseAdded }: AdminFormProps
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/exercises', {
+      const response = await fetch(`${API_URL}/api/exercises`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',

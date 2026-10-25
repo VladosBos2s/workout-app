@@ -5,7 +5,7 @@ import { getExercisesForDay } from '../../../../Features/plans/utils';
 import type { ExperienceLevel } from '../../../../shared/types';
 import type { Exercise } from '../../../../Features/Exercises/types';
 import styles from './AssignPlanEditor.module.scss';
-
+import { API_URL } from '../../../../api';
 interface AssignPlanEditorProps {
   adminEmail: string;
   allExercises: Exercise[];
@@ -129,7 +129,7 @@ export const AssignPlanEditor = ({ adminEmail, allExercises }: AssignPlanEditorP
     }));
 
     try {
-      const response = await fetch('http://localhost:5000/api/admin/set-user-plan', {
+      const response = await fetch(`${API_URL}/api/admin/set-user-plan`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',

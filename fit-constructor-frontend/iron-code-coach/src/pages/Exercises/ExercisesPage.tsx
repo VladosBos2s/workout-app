@@ -6,7 +6,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
+import { API_URL } from '../../api';
 // Data types and constants
 import { type MuscleGroup, type Exercise } from '../../Features/Exercises/types';
 import { ExerciseCard } from '../../Features/Exercises/components/ExerciseCard';
@@ -35,7 +35,7 @@ export const ExercisesPage = ({ userLevel, userSplit }: ExercisesPageProps) => {
     const loadExercises = async () => {
       try {
         // You can pass the current language to backend if needed: headers: { 'Accept-Language': i18n.language }
-        const response = await fetch('http://localhost:5000/api/exercises', {
+        const response = await fetch(`${API_URL}/api/exercises`, {
           headers: {
             'Accept-Language': i18n.language,
           },

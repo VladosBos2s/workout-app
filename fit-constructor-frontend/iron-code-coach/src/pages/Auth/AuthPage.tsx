@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './AuthPage.module.scss';
-
+import { API_URL } from '../../api';
 interface AuthPageProps {
     onLoginSuccess: (email: string, role: string) => void;
 }
@@ -29,7 +29,7 @@ export const AuthPage = ({ onLoginSuccess }: AuthPageProps) => {
         const endPoint = isRegisterMode ? '/api/register' : '/api/login';
 
         try {
-            const response = await fetch(`http://localhost:5000${endPoint}`, {
+            const response = await fetch(`${API_URL}${endPoint}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })

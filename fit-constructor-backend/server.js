@@ -290,7 +290,18 @@ app.post('/api/admin/set-user-plan', async (req, res) => {
 // Add new exercises (only admin can add)
 app.post('/api/exercises', async (req, res) => {
   try {
-    const { email, title, muscleGroup, description, default_weight, default_sets, default_reps, video } = req.body;
+    const { 
+      email, 
+      title_ru, 
+      title_en, 
+      muscleGroup, 
+      description_ru, 
+      description_en, 
+      default_weight, 
+      default_sets, 
+      default_reps, 
+      video 
+    } = req.body;
 
     if (!email) {
       return res.status(401).json({ error: 'AUTHORIZATION_REQUIRED' });
@@ -303,8 +314,28 @@ app.post('/api/exercises', async (req, res) => {
     }
 
     const newExercise = await pool.query(
-      'INSERT INTO exercises (title, muscle_group, description, default_weight, default_sets, default_reps, video) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *', 
-      [title, muscleGroup, description, default_weight || 0, default_sets || 3, default_reps || '8-12', video || null]
+      `INSERT INTO exercises (
+        title_ru, 
+        title_en, 
+        muscle_group, 
+        description_ru, 
+        description_en, 
+        default_weight, 
+        default_sets, 
+        default_reps, 
+        video
+      ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *`, 
+      [
+        title_ru, 
+        title_en, 
+        muscleGroup, 
+        description_ru || null, 
+        description_en || null, 
+        default_weight || 0, 
+        default_sets || 3, 
+        default_reps || '8-12', 
+        video || null
+      ]
     );
     
     res.status(201).json({

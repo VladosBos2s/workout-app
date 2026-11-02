@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import styles from './AdminExerciseForm.module.scss';
 import { MUSCLE_GROUPS } from '../../../../shared/constants';
 import { API_URL } from '../../../../api';
+
 interface AdminFormProps {
   userEmail: string;
   onExerciseAdded: () => void;
@@ -10,9 +11,11 @@ interface AdminFormProps {
 
 export const AdminExerciseForm = ({ userEmail, onExerciseAdded }: AdminFormProps) => {
   const { t, i18n } = useTranslation();
-  const [title, setTitle] = useState('');
+  const [titleRu, setTitleRu] = useState('');
+  const [titleEn, setTitleEn] = useState('');
   const [muscleGroup, setMuscleGroup] = useState('');
-  const [description, setDescription] = useState('');
+  const [descriptionRu, setDescriptionRu] = useState('');
+  const [descriptionEn, setDescriptionEn] = useState('');
   const [defaultWeight, setDefaultWeight] = useState<number | ''>('');
   const [defaultSets, setDefaultSets] = useState<number | ''>('');
   const [defaultReps, setDefaultReps] = useState('');
@@ -25,7 +28,7 @@ export const AdminExerciseForm = ({ userEmail, onExerciseAdded }: AdminFormProps
       (typeof defaultSets === 'number' && defaultSets < 0)
     ) {
       alert(t('adminForm.negativeValuesError'));
-      return; // Stop form submission
+      return;
     }
 
     try {
@@ -36,10 +39,12 @@ export const AdminExerciseForm = ({ userEmail, onExerciseAdded }: AdminFormProps
           'Accept-Language': i18n.language
         },
         body: JSON.stringify({
-          email: userEmail, // Pass email to verify admin role on backend
-          title,
+          email: userEmail,
+          title_ru: titleRu,
+          title_en: titleEn,
           muscleGroup,
-          description,
+          description_ru: descriptionRu,
+          description_en: descriptionEn,
           default_weight: Number(defaultWeight) || 0,
           default_sets: Number(defaultSets) || 3,
           default_reps: defaultReps || '8-12',
@@ -51,15 +56,17 @@ export const AdminExerciseForm = ({ userEmail, onExerciseAdded }: AdminFormProps
       if (!response.ok) throw new Error(data.error);
 
       alert(data.message);
-      // Clear form inputs
-      setTitle('');
+      // Очистка полей формы
+      setTitleRu('');
+      setTitleEn('');
       setMuscleGroup('');
-      setDescription('');
+      setDescriptionRu('');
+      setDescriptionEn('');
       setDefaultWeight('');
       setDefaultSets('');
       setDefaultReps('');
       setVideo('');
-      onExerciseAdded(); // Refresh exercises list
+      onExerciseAdded();
     } catch (err: any) {
       alert(err.message);
     }
@@ -71,9 +78,17 @@ export const AdminExerciseForm = ({ userEmail, onExerciseAdded }: AdminFormProps
       
       <input 
         type="text" 
-        placeholder={t('adminForm.titlePlaceholder')}
-        value={title} 
-        onChange={e => setTitle(e.target.value)} 
+        placeholder={`${t('adminForm.titlePlaceholder')} (RU)`}
+        value={titleRu} 
+        onChange={e => setTitleRu(e.target.value)} 
+        required 
+      />
+
+      <input 
+        type="text" 
+        placeholder={`${t('adminForm.titlePlaceholder')} (EN)`}
+        value={titleEn} 
+        onChange={e => setTitleEn(e.target.value)} 
         required 
       />
       
@@ -107,9 +122,16 @@ export const AdminExerciseForm = ({ userEmail, onExerciseAdded }: AdminFormProps
       </div>
       
       <textarea 
-        placeholder={t('adminForm.descriptionPlaceholder')}
-        value={description} 
-        onChange={e => setDescription(e.target.value)} 
+        placeholder={`${t('adminForm.descriptionPlaceholder')} (RU)`}
+        value={descriptionRu} 
+        onChange={e => setDescriptionRu(e.target.value)} 
+        className={styles.textarea}
+      />
+
+      <textarea 
+        placeholder={`${t('adminForm.descriptionPlaceholder')} (EN)`}
+        value={descriptionEn} 
+        onChange={e => setDescriptionEn(e.target.value)} 
         className={styles.textarea}
       />
       

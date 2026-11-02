@@ -1,5 +1,7 @@
 .wrapper {
     max-width: 640px;
+    width: 100%;
+    box-sizing: border-box;
     margin: 0 auto;
     padding: 2rem;
     background: var(--bg);
@@ -14,10 +16,10 @@
     color: var(--text-h);
 }
 
-/* Сетка 2 колонки */
+/* Сетка 2 колонки: minmax(0, 1fr) не дает контенту распирать сетку */
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 1.25rem;
 }
 
@@ -30,7 +32,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-    
+    min-width: 0;
 }
 
 .label {
@@ -42,17 +44,17 @@
 }
 
 /* Инпуты */
-.input ,
+.input,
 .select {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
     color: var(--text-h);
-        /* всегда чёрный независимо от темы */
-        background: var(--bg-muted);
+    background: var(--bg-muted);
     padding: 0.6rem 0.75rem;
     border: 1.5px solid var(--border);
     border-radius: 8px;
     font-size: 1rem;
- 
-    background: var(--bg-muted);
     transition: border-color 0.15s;
     outline: none;
 }
@@ -68,17 +70,20 @@
     display: flex;
     gap: 0.4rem;
     flex-wrap: wrap;
-  
+    width: 100%;
 }
 
 .toggleBtn {
-    flex: 1;
+    flex: 1 1 auto;
+    min-width: calc(50% - 0.4rem);
     padding: 0.5rem 0.6rem;
     border-radius: 8px;
     font-size: 0.875rem;
+    text-align: center;
     cursor: pointer;
     transition: background 0.3s, color 0.3s, border-color 0.3s;
-    white-space: nowrap;
+    white-space: normal;
+    word-break: break-word;
     background: var(--bg-muted);
     border: 1.5px solid var(--border);
     color: var(--text);
@@ -120,13 +125,29 @@
     background: var(--accent-hover);
 }
 
-/* Мобилки */
-@media (max-width: 480px) {
+/* Планшеты и мобилки */
+@media (max-width: 600px) {
+    .wrapper {
+        padding: 1.25rem 1rem;
+        border-radius: 12px;
+    }
+
+    .title {
+        font-size: 1.2rem;
+        margin-bottom: 1.1rem;
+    }
+
     .grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .fieldFull {
         grid-column: 1;
+    }
+
+    .toggleBtn {
+        min-width: 100%;
+        font-size: 0.85rem;
     }
 }

@@ -1,6 +1,8 @@
 /* Main container wrapper */
 .wrapper {
   max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 2rem 1rem;
   color: var(--text);
@@ -18,13 +20,14 @@
 /* Navigation tabs container for progression weeks */
 .weeksTabs {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   margin-bottom: 2rem;
 }
 
 /* Week selection tab button */
 .weekBtn {
-  padding: 0.75rem 1.25rem;
+  padding: 0.65rem 1.1rem;
   border-radius: 8px;
   background: var(--bg-muted);
   color: var(--text);
@@ -32,6 +35,8 @@
   transition: all 0.2s ease;
   font-weight: 600;
   cursor: pointer;
+  flex: 1 1 auto;
+  text-align: center;
 
   &:hover {
     background: var(--bg);
@@ -39,10 +44,10 @@
     border-color: var(--accent);
   }
 
-  /* Active state for selected week tab (Ensures contrast using var(--bg)) */
+  /* Active state for selected week tab */
   &.active {
     background: var(--accent);
-    color: var(--bg); /* Fixes white-on-white text issue in dark mode */
+    color: var(--bg);
     border-color: var(--accent);
 
     &:hover {
@@ -53,11 +58,12 @@
   }
 }
 
-/* Daily layout structure */
+/* Daily layout structure — responsive grid prevents overflow on 4-5 day splits */
 .daysList {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  align-items: start;
 }
 
 /* Day card container */
@@ -66,7 +72,8 @@
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.25rem;
-  flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   box-shadow: var(--shadow);
@@ -77,6 +84,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin-bottom: 16px;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--border);
@@ -94,15 +103,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
+  padding: 8px 14px;
   cursor: pointer;
   border-radius: 8px;
   background-color: var(--accent);
-  color: var(--bg); /* Ensures readable dark text on accent background */
+  color: var(--bg);
   border: 1px solid var(--accent);
   font-weight: 600;
-  margin: 0.5rem 0.5rem 0 0.5rem;
   font-size: 13px;
+  white-space: nowrap;
   box-shadow: var(--shadow);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -129,6 +138,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   background-color: var(--bg-muted);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -138,6 +148,7 @@
     margin: 0 0 4px 0;
     color: var(--text-h);
     font-size: 14px;
+    word-break: break-word;
   }
 
   .muscleGroup {
@@ -154,5 +165,28 @@
     font-weight: 700;
     color: var(--text-h);
     font-size: 13px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
+
+  .daysList {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .day {
+    padding: 1rem;
   }
 }

@@ -6,6 +6,7 @@ import type { ExperienceLevel } from '../../../../shared/types';
 import type { Exercise } from '../../../../Features/Exercises/types';
 import styles from './AssignPlanEditor.module.scss';
 import { API_URL } from '../../../../api';
+
 interface AssignPlanEditorProps {
   adminEmail: string;
   allExercises: Exercise[];
@@ -14,10 +15,10 @@ interface AssignPlanEditorProps {
 interface EditableExercise {
   id: number;
   title: string;
-  muscleGroup: string; // Muscle group field preserved for filtering
+  muscleGroup: string;
   sets: number | '';
   reps: string;
-  weight: number |string;
+  weight: number | string;
 }
 
 interface EditableDay {
@@ -32,10 +33,10 @@ export const AssignPlanEditor = ({ adminEmail, allExercises }: AssignPlanEditorP
   const [userLevel, setUserLevel] = useState<ExperienceLevel>('intermediate');
   const [editableDays, setEditableDays] = useState<EditableDay[] | null>(null);
 
-  // Step 1: Generate plan template for editing
-  const handleGenerateTemplate = (e: React.FormEvent) => {
+  // Срабатывает сразу при нажатии на кнопку «Сгенерировать план для настройки»
+  const handleGenerateTemplate = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!targetEmail) {
+    if (!targetEmail.trim()) {
       alert(t('assignPlan.enterEmailAlert'));
       return;
     }
@@ -46,7 +47,22 @@ export const AssignPlanEditor = ({ adminEmail, allExercises }: AssignPlanEditorP
       return;
     }
 
-  const generated: EditableDay[] = plan.days.map((day, dayIndex) => {
+    // Проверяем существование почты через уже готовый роут в server.js
+    try {
+      const response = await fetch(
+        `${API_URL}/api/admin/user-workouts?email=${encodeURIComponent(targetEmail.trim())}`
+      );
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'USER_NOT_FOUND');
+      }
+    } catch (err: any) {
+      alert(err.message); // Выведет USER_NOT_FOUND и не откроет редактор упражнений
+      return;
+    }
+
+    const generated: EditableDay[] = plan.days.map((day, dayIndex) => {
       const exercisesForThisDay = getExercisesForDay(
         allExercises,
         plan.split,
@@ -57,7 +73,6 @@ export const AssignPlanEditor = ({ adminEmail, allExercises }: AssignPlanEditorP
       );
 
       return {
-        // Correctly read 'name' from the training plan definition
         dayName: day.name || `Day ${dayIndex + 1}`,
         exercises: exercisesForThisDay.map(ex => {
           const levelKey = (userLevel || 'beginner').toLowerCase() as 'beginner' | 'intermediate' | 'advanced';
@@ -67,7 +82,7 @@ export const AssignPlanEditor = ({ adminEmail, allExercises }: AssignPlanEditorP
           return {
             id: ex.id,
             title: ex.title,
-            muscleGroup: ex.muscleGroups, // Keep muscle group for filtering
+            muscleGroup: ex.muscleGroups,
             sets: 3,
             reps: '8-12',
             weight: weightForLevel
@@ -77,17 +92,13 @@ export const AssignPlanEditor = ({ adminEmail, allExercises }: AssignPlanEditorP
     });
 
     setEditableDays(generated);
-
-    setEditableDays(generated);
   };
 
-  // Universal function to modify exercise parameters or replace it via select dropdown
   const handleExerciseChange = (dayIndex: number, exIndex: number, field: keyof EditableExercise | 'exercise', value: any) => {
     if (!editableDays) return;
 
     const updatedDays = [...editableDays];
 
-    // If trainer changes the exercise itself via select dropdown
     if (field === 'exercise') {
       const selectedExercise = allExercises.find(ex => ex.id === Number(value));
       if (selectedExercise) {
@@ -95,11 +106,10 @@ export const AssignPlanEditor = ({ adminEmail, allExercises }: AssignPlanEditorP
           ...updatedDays[dayIndex].exercises[exIndex],
           id: selectedExercise.id,
           title: selectedExercise.title,
-          muscleGroup: selectedExercise.muscleGroup, // Update muscle group upon change
+          muscleGroup: selectedExercise.muscleGroup,
         };
       }
     } else {
-      // For sets, reps, and weight
       let parsedValue = value;
       if (field === 'sets' || field === 'weight') {
         parsedValue = value === '' ? '' : Number(value);
@@ -114,7 +124,6 @@ export const AssignPlanEditor = ({ adminEmail, allExercises }: AssignPlanEditorP
     setEditableDays(updatedDays);
   };
 
-  // Step 3: Save and submit the customized plan to the backend
   const handleSaveAndAssign = async () => {
     if (!editableDays) return;
 
@@ -157,7 +166,6 @@ export const AssignPlanEditor = ({ adminEmail, allExercises }: AssignPlanEditorP
     <div className={styles.editorContainer}>
       <h3>{t('assignPlan.title')}</h3>
 
-      {/* Configuration form for generation */}
       {!editableDays ? (
         <form onSubmit={handleGenerateTemplate} className={styles.configForm}>
           <input 
@@ -168,32 +176,31 @@ export const AssignPlanEditor = ({ adminEmail, allExercises }: AssignPlanEditorP
             required 
           />
 
-         <div className={styles.fieldGroup}>
-           <label>{t('assignPlan.splitLabel')}</label>
-          <select value={selectedPlanIndex} onChange={e => setSelectedPlanIndex(Number(e.target.value))}>
-           <option value={0}>{t('assignPlan.splits.fullBody2')}</option>
-           <option value={1}>{t('assignPlan.splits.fullBody3')}</option>
-           <option value={2}>{t('assignPlan.splits.upperLowerFullBody3')}</option>
-           <option value={3}>{t('assignPlan.splits.upperLower4')}</option>
-            <option value={4}>{t('assignPlan.splits.upperLower5')}</option>
-            <option value={5}>{t('assignPlan.splits.pushPullLegs5')}</option>
-            <option value={6}>{t('assignPlan.splits.arnoldSplit5')}</option>
-          </select>
-        </div>
+          <div className={styles.fieldGroup}>
+            <label>{t('assignPlan.splitLabel')}</label>
+            <select value={selectedPlanIndex} onChange={e => setSelectedPlanIndex(Number(e.target.value))}>
+              <option value={0}>{t('assignPlan.splits.fullBody2')}</option>
+              <option value={1}>{t('assignPlan.splits.fullBody3')}</option>
+              <option value={2}>{t('assignPlan.splits.upperLowerFullBody3')}</option>
+              <option value={3}>{t('assignPlan.splits.upperLower4')}</option>
+              <option value={4}>{t('assignPlan.splits.upperLower5')}</option>
+              <option value={5}>{t('assignPlan.splits.pushPullLegs5')}</option>
+              <option value={6}>{t('assignPlan.splits.arnoldSplit5')}</option>
+            </select>
+          </div>
 
           <div className={styles.fieldGroup}>
-           <label>{t('assignPlan.levelLabel')}</label>
-           <select value={userLevel} onChange={e => setUserLevel(e.target.value as ExperienceLevel)}>
-             <option value="beginner">{t('assignPlan.levels.beginner')}</option>
+            <label>{t('assignPlan.levelLabel')}</label>
+            <select value={userLevel} onChange={e => setUserLevel(e.target.value as ExperienceLevel)}>
+              <option value="beginner">{t('assignPlan.levels.beginner')}</option>
               <option value="intermediate">{t('assignPlan.levels.intermediate')}</option>
               <option value="advanced">{t('assignPlan.levels.advanced')}</option>
-          </select>
+            </select>
           </div>
 
           <button type="submit" className={styles.generateBtn}>{t('assignPlan.generateBtn')}</button>
         </form>
       ) : (
-        /* Interactive editor for generated days */
         <div className={styles.daysEditor}>
           <h4>{t('assignPlan.editingTitle', { email: targetEmail })}</h4>
           
@@ -204,8 +211,6 @@ export const AssignPlanEditor = ({ adminEmail, allExercises }: AssignPlanEditorP
               <div className={styles.exercisesList}>
                 {day.exercises.map((ex, exIndex) => (
                   <div key={exIndex} className={styles.exerciseRow}>
-                    
-                    {/* Exercise dropdown filtered strictly by muscle group */}
                     <div className={styles.selectWrapper}>
                       <select 
                         className={styles.exerciseSelect}
@@ -224,7 +229,6 @@ export const AssignPlanEditor = ({ adminEmail, allExercises }: AssignPlanEditorP
                     
                     <div className={styles.inputsGroup}>
                       {ex.muscleGroup === 'Кардио' ? (
-                        // If cardio, display time input only
                         <label>
                           {t('assignPlan.timeLabel')}
                           <input 
@@ -234,7 +238,6 @@ export const AssignPlanEditor = ({ adminEmail, allExercises }: AssignPlanEditorP
                           />
                         </label>
                       ) : (
-                        // For regular strength exercises
                         <>
                           <label>
                             {t('assignPlan.setsLabel')}
@@ -265,7 +268,6 @@ export const AssignPlanEditor = ({ adminEmail, allExercises }: AssignPlanEditorP
                         </>
                       )}
                     </div>
-
                   </div>
                 ))}
               </div>

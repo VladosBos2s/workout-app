@@ -215,10 +215,35 @@ app.get('/api/admin/user-workouts', async (req, res) => {
   }
 });
 
-//  ASSIGN CUSTOM PLAN TO USER (FOR ADMIN)
+// CHECK IF USER EXISTS BEFORE GENERATING PLAN (FOR ADMIN)
+app.post('/api/admin/check-user', async (req, res) => {
+  try {
+    const { adminEmail, targetEmail } = req.body;
+
+    if (!adminEmail) {
+      return res.status(401).json({ error: 'ADMIN_AUTH_REQUIRED' });
+    }
+
+    const adminResult = await pool.query('SELECT role FROM users WHERE email = $1', [adminEmail]);
+    if (adminResult.rows.length === 0 || adminResult.rows[0].role !== 'admin') {
+      return res.status(403).json({ error: 'ACCESS_DENIED_ADMIN_REQUIRED' });
+    }
+
+    const userResult = await pool.query('SELECT id FROM users WHERE email = $1', [targetEmail]);
+    if (userResult.rows.length === 0) {
+      return res.status(404).json({ error: 'USER_NOT_FOUND' });
+    }
+
+    res.status(200).json({ exists: true });
+  } catch (err) {
+    console.error('Error checking user:', err.message);
+    res.status(500).json({ error: 'SERVER_ERROR_CHECKING_USER' });
+  }
+});
+
+// ASSIGN CUSTOM PLAN TO USER (FOR ADMIN)
 app.post('/api/admin/set-user-plan', async (req, res) => {
   try {
-    console.log("Admin email attempting to save:", req.body.adminEmail);
     const { adminEmail, targetEmail, days } = req.body;
 
     if (!adminEmail) {
@@ -248,7 +273,6 @@ app.post('/api/admin/set-user-plan', async (req, res) => {
     // 4. Save new days and exercises with custom values
     if (days && Array.isArray(days)) {
       for (const day of days) {
-        // Safely check all possible naming variants from frontend payload
         const rawTitle = day.dayName || day.name || day.title;
         const workoutTitle = (rawTitle && rawTitle.trim() !== '') ? rawTitle.trim() : 'Trainer Workout Plan';
 
@@ -259,34 +283,30 @@ app.post('/api/admin/set-user-plan', async (req, res) => {
 
         const workoutId = newWorkout.rows[0].id;
 
-        // Save associated exercises for this workout day
         if (day.exercises && Array.isArray(day.exercises)) {
-         for (const ex of day.exercises) {
-    await pool.query(
-      `INSERT INTO workout_exercises (workout_id, exercise_id, sets, reps, weight) 
-       VALUES ($1, $2, $3, $4, $5)`,
-      [
-        workoutId,
-        ex.exerciseId || ex.id,
-        ex.sets || 3,
-        ex.reps || '10',
-        ex.weight || ex.baseLoad || 0
-      ]
-    );
-  }
-
+          for (const ex of day.exercises) {
+            await pool.query(
+              `INSERT INTO workout_exercises (workout_id, exercise_id, sets, reps, weight) 
+               VALUES ($1, $2, $3, $4, $5)`,
+              [
+                workoutId,
+                ex.exerciseId || ex.id,
+                ex.sets || 3,
+                ex.reps || '10',
+                ex.weight || ex.baseLoad || 0
+              ]
+            );
+          }
         }
       }
     }
 
     res.status(201).json({ message: `Plan for user ${targetEmail} successfully created and saved!` });
-
   } catch (err) {
     console.error('Error saving trainer plan:', err.message);
     res.status(500).json({ error: 'SERVER_ERROR_ASSIGNING_PLAN' });
   }
 });
-
 // Add new exercises (only admin can add)
 app.post('/api/exercises', async (req, res) => {
   try {
